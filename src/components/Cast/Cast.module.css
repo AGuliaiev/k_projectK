@@ -1,0 +1,25 @@
+.castList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 30px;
+}
+.castItem {
+    width: 160px;
+    height: 300px;
+    display: block;
+}
+.realName {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+.castName {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+.castAvatar {
+    width: 160px;
+    height: 220px;
+}
