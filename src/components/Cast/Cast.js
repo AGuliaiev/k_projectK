@@ -4,42 +4,42 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import css from './Cast.module.css';
 import noAvatar from '../imeges/noAva.jpeg';
+import {fetchCasts} from "../../services/castService";
 
 
-import {useDispatch, useSelector} from "react-redux";
-import {castActions} from "../../redux/slices/castSlice";
+
 
 
 export default function Cast() {
     const [cast, setCast] = useState(null);
     const { id } = useParams();
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const isLoaded = cast !== null;
 
-    const movie = useSelector((state) => state.casts);
-    console.log('cast', movie)
-
-
-    useEffect(() => {
-        dispatch(castActions.allCast(id));
-    }, [id]);
-
-
-
+    // const movie = useSelector((state) => state.casts);
+    // console.log('cast', movie)
+    //
+    //
     // useEffect(() => {
-    //     fetchCasts(id)
-    //         .then(setCast)
-    //         .catch(error => {
-    //             console.log(error);
-    //         });
+    //     dispatch(castActions.allCast(id));
     // }, [id]);
-    useEffect(() => {
-        if (movie) {
 
-            const castData = movie.cast;
-            setCast(castData);
-        }
-    }, [movie]);
+
+
+    useEffect(() => {
+        fetchCasts(id)
+            .then(setCast)
+            .catch(error => {
+                console.log(error);
+            });
+    }, [id]);
+    // useEffect(() => {
+    //     if (movie) {
+    //
+    //         const castData = movie.cast;
+    //         setCast(castData);
+    //     }
+    // }, [movie]);
     if (!isLoaded) {
         return <p>Loading...</p>;
     }

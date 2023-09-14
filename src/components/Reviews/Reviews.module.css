@@ -1,0 +1,14 @@
+.reviewsList {
+    list-style: none;
+    padding: 30px;
+}
+.reviewsItem {
+    border-top: 2px solid #e5b1c9;
+}
+.reviewAuthor {
+    font-weight: 600;
+    font-size: 16px;
+}
+.reviewContent {
+    font-size: 12px;
+}

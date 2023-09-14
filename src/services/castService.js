@@ -1,6 +1,5 @@
 import axios from "axios";
-import {apiService} from "./apiService";
-import {urls} from "../constans/urls";
+
 
 
 const apiKey = 'ddb43a60b8283b1dccd0de534703fffa';
