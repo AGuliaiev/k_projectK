@@ -13,7 +13,8 @@ const initialState = {
     movieById: null,
     loading: false,
     error: null,
-    pages: 0
+    pages: 0,
+    ratings: {}
 
 };
 
@@ -63,6 +64,10 @@ const moviesSlice = createSlice({
     name: 'moviesSlice',
     initialState,
     reducers:{
+        setMovieRating: (state, action) => {
+            const { movieId, rating } = action.payload;
+            state.ratings[movieId] = rating;
+        },
         setCurrent: (state, action) => {
             state.current = action.payload
         }

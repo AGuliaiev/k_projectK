@@ -9,13 +9,14 @@ import MoviesCard from "../components/MoviesListCards/moviesDetails/MoviesCard";
 
 
 import MoviePage from "../Pages/MoviePage";
-import StartPage from "../Pages/StartPage";
+
 import MoviesSerch from "../components/Searchbar/MoviesSerch";
 
 import Cast from "../components/Cast/Cast";
 import Reviews from "../components/Reviews/Reviews";
 
 import GenreList from "../components/genres/genreList/GenreList";
+
 
 
 
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
         children:[
             {
                 index: true,
-                element:<StartPage/>
+                element:<MoviePage/>
             },
             {
                 path: 'movies',

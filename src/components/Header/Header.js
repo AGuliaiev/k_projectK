@@ -3,7 +3,7 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import css from './Header.module.css';
 import ControlledSwitches from "../ThemeMenu/ControlledSwitches";
-
+import user from '../imeges/user.png'
 
 const Header = ({ isDarkMode, onToggle }) => {
     const label = isDarkMode ?   'Light theme' : 'Dark theme';
@@ -28,6 +28,8 @@ const Header = ({ isDarkMode, onToggle }) => {
                         <ControlledSwitches isDarkMode={isDarkMode} onToggle={onToggle} label={label} />
                     </div>
                 </div>
+                <img style={{borderRadius:'50%', height:'100px'}} src={user}/>
+
             </div>
         </div>
     );

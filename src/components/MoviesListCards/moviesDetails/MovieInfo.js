@@ -2,8 +2,10 @@ import React, {Suspense} from 'react';
 import css from './../Movies.module.css'
 import {Link, Outlet} from "react-router-dom";
 import Loader from "../../Loader/Loader";
+import StarRatings from "../../Ratings/StarRatings";
 
-import StarsRating from "../../StarsRating";
+
+
 
 const MovieInfo = ({ info }) => {
 
@@ -41,12 +43,14 @@ const MovieInfo = ({ info }) => {
 
                     <p>Original language: {original_language}</p>
 
-                    <StarsRating/>
+
                     <h3>Genres</h3>
                     <h3>
                         {genresStr}
                     </h3>
+                    <StarRatings/>
                 </div>
+
             </div>
 
             <ul className={css.linksCR}>

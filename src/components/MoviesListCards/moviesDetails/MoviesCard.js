@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { moviesActions} from '../../../redux/slices/moviesSlice';
 import MovieInfo from './MovieInfo';
-import StartPage from "../../../Pages/StartPage";
+
 
 const MoviesCard = () => {
     const { id } = useParams();
