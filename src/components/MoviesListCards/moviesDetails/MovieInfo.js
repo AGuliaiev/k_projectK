@@ -35,9 +35,11 @@ const MovieInfo = ({ info }) => {
     } = info;
 
     const handleRatingChange = (event, newValue) => {
-        setRatingForMovie(newValue);
+        if (newValue !== null) {
+            setRatingForMovie(newValue);
 
-        localStorage.setItem(`movie-rating-${id}`, newValue.toString());
+            localStorage.setItem(`movie-rating-${id}`, newValue.toString());
+        }
     };
     const genresStr = genres.map((genre) => genre.name).join(', ');
     const voteAvarage = vote_average.toFixed(1);

@@ -18,10 +18,15 @@ const MoviesListCard = React.memo(({ movie }) => {
         const storedRating = localStorage.getItem(`movie-rating-${id}`);
         return storedRating ? parseFloat(storedRating) : 2;
     });
+
+
     const handleRatingChange = (event, newValue) => {
-        setRatingForMovie(newValue);
-        dispatch(moviesActions.setMovieRating({ id, rating: newValue }));
-        localStorage.setItem(`movie-rating-${id}`, newValue);
+        if (newValue !== null) {
+            setRatingForMovie(newValue);
+            dispatch(moviesActions.setMovieRating({ id, rating: newValue }));
+            localStorage.setItem(`movie-rating-${id}`, newValue);
+        }
+
     };
 
 
