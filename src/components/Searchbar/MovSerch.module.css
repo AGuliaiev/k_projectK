@@ -1,0 +1,36 @@
+.moviesList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    /*padding: 30px;*/
+    list-style: none;
+    text-decoration: none;
+}
+.movieItem {
+}
+.movieLink {
+    display: block;
+    justify-content: center;
+    text-decoration: none;
+    color: rgb(243, 183, 35);
+    font-size: 15px;
+    font-weight: 600;
+    /*width: 250px;*/
+    width: 19%;
+    /*height: 440px;*/
+    border-radius: 2px;
+}
+.movieLink:hover,
+.movieLink:focus {
+    box-shadow: 0 14px 17px 2px rgb(239, 210, 23);
+    transition: 0.4s linear;
+}
+.movieTitle {
+    margin: 7px;
+}
+.movieImg {
+    border-radius: 2px;
+    width: 100%;
+    /*height: 370px;*/
+}

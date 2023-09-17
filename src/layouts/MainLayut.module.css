@@ -1,0 +1,12 @@
+/* MainLayout.module.css */
+
+.light-background {
+    background-color: #fcfcfc; /* Цвет светлого фона */
+    color: #000; /* Цвет текста для светлого фона */
+}
+
+.dark-background {
+    margin: 0;
+    background-color: #4d4b4b; /* Цвет темного фона */
+    color: #fff; /* Цвет текста для темного фона */
+}

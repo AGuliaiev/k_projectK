@@ -1,0 +1,52 @@
+/* Стили для светлой темы */
+.container {
+
+    background-color: blue;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 50px;
+    align-items: center;
+    font-size: 30px;
+    margin: 0;
+}
+
+/* Стили для темной темы */
+.dark-background {
+
+    background-color: black; /* Измените цвет фона для темной темы */
+    display: flex;
+    justify-content: space-around;
+    padding-left: 50px;
+    align-items: center;
+    font-size: 30px;
+    margin: 0;
+}
+
+/* Остальные стили (независимые от темы) */
+.container a {
+    text-decoration: none;
+    color: snow;
+}
+
+.container a[class='active'] {
+    color: gold;
+}
+
+.Wrapper {
+    width: 50vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Switch {
+    display: flex;
+    align-items: center;
+}
+
+.off {
+    padding-top: 5px;
+}
+
+.word {
+    color: gold;
+}

@@ -1,0 +1,150 @@
+.moviesList{
+
+
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    flex-wrap:wrap;
+    margin: 0;
+    padding-bottom: 20px;
+
+}
+.Img{
+    width: 100%;
+
+}
+.Block{
+
+    justify-content: center;
+    align-items: center;
+}
+
+.cardBlock {
+
+width: 300px;
+
+    margin-top: 20px;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.cardBlock:hover,
+
+.cardBlock:focus{
+    box-shadow: 0 10px 15px 2px rgb(220, 193, 20);
+    /*box-shadow: 0 10px 15px 2px rgba(100,50,92, 0.60);*/
+    transition: 0.4s linear;
+
+}
+.link{
+
+    cursor: pointer
+}
+
+
+.Page{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 20px;
+    padding-left: 5px;
+}
+h2{
+    display: flex;
+    justify-content: center;
+}
+.wrapper{
+    padding-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+
+}
+.Info{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    font-size: 25px;
+}
+button{
+    width: 100px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.Home{
+    display: flex;
+    flex-direction: column;
+
+}
+.Title{
+    display: flex;
+    justify-content: center;
+    color: #535bf2;
+}
+.button{
+    font-size: 20px;
+}
+.movieTitle {
+    padding: 0;
+    margin-left: 50px;
+    margin-top: 30px;
+    font-size: 35px;
+    color: #4d3045;
+}
+.searchButton {
+    display: block;
+    text-decoration: none;
+    background-color: #6e425c;
+    color: #e5b1c9;
+    /*margin-left: 20px;*/
+    border-radius: 50px;
+    font-size: 15px;
+    padding: 10px;
+    width: 80px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 30px 30px;
+}
+.searchButton:hover,
+.searchButton:focus {
+    color: #6e425c;
+    background-color: #e5b1c9;
+    transition: 0.4s linear;
+}
+.linksCR {
+    list-style: none;
+    display: flex;
+}
+.castLink {
+    text-decoration: none;
+    color: rgb(243, 183, 35);
+    /*color: #6e425c;*/
+    font-size: 30px;
+    font-weight: 600;
+    padding-left: 40px;
+}
+.castLink:hover,
+.castLink:focus {
+    /*color: #ff0643;*/
+    color: black;
+}
+.reviewsLink {
+    text-decoration: none;
+    color: rgb(243, 183, 35);
+    /*color: #6e425c;*/
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 100px;
+    padding-left: 100px;
+}
+.reviewsLink:hover,
+.reviewsLink:focus {
+    color: black;
+    /*color: #e5b1c9;*/
+}
+.Img{
+    background-size: cover;
+}
