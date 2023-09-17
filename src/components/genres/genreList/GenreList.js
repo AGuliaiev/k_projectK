@@ -20,8 +20,7 @@ const GenreList = () => {
     if (!movies) {
         return <div>Loading...</div>;
     }
-    console.log('Movies:', movies);
-    console.log('Pages:', pages);
+
 
     return (
         <div>

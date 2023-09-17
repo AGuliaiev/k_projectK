@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import { useNavigate} from "react-router-dom";
 import css from './../Genre/genre.module.css'
+
 const GenreMovies = ({ movie }) => {
 
     const {poster_path, title, id} = movie;
     const navigate = useNavigate();
+
+
+
 
     return (
 
@@ -20,6 +24,7 @@ const GenreMovies = ({ movie }) => {
                         alt={title}
                     />
                     <h2 >{title}</h2>
+
 
                 </div>
             </a>

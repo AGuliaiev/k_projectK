@@ -37,7 +37,7 @@ import {serService} from "../../services/sercheService";
 
 
     }, [searchParams]);
-      console.log('query', movies)
+
     const handleChange = evt => {
         setQuery(evt.target.value);
     };

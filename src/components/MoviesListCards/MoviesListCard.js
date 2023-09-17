@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import css from './Movies.module.css';
@@ -7,21 +6,25 @@ import { moviesActions } from "../../redux/slices/moviesSlice";
 import Rating from "@mui/material/Rating";
 
 
-const MoviesListCard = ({ movie }) => {
+
+
+
+const MoviesListCard = React.memo(({ movie }) => {
     const { backdrop_path, title, id } = movie;
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-
-    const [ratingForMovie, setRatingForMovie] = useState(2);
-
+    const [ratingForMovie, setRatingForMovie] = useState(() => {
+        const storedRating = localStorage.getItem(`movie-rating-${id}`);
+        return storedRating ? parseFloat(storedRating) : 2;
+    });
     const handleRatingChange = (event, newValue) => {
-
         setRatingForMovie(newValue);
-
-
         dispatch(moviesActions.setMovieRating({ id, rating: newValue }));
+        localStorage.setItem(`movie-rating-${id}`, newValue);
     };
+
+
 
     return (
         <div className={css.cardBlock}>
@@ -35,15 +38,17 @@ const MoviesListCard = ({ movie }) => {
                 </div>
                 <h2>{title}</h2>
             </a>
-
             <Rating
                 name={`movie-rating-${id}`}
                 value={ratingForMovie}
                 onChange={handleRatingChange}
-            />
 
+            />
         </div>
     );
-};
+}, (prevProps, nextProps) => {
+
+    return prevProps.movie.id === nextProps.movie.id && prevProps.ratingForMovie === nextProps.ratingForMovie;
+});
 
 export default MoviesListCard;

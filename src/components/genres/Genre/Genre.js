@@ -9,6 +9,7 @@ const Genre = ({genre}) => {
     const navigate = useNavigate();
     return (
         <div className={css.wrapper} onClick={()=>navigate(`/genres/${id}`)}>
+
             <a className={css.link} >
                 <div className={css.word}> {name}</div>
             </a>

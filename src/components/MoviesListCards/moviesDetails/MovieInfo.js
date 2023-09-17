@@ -1,14 +1,26 @@
-import React, {Suspense} from 'react';
+import React, {Suspense, useEffect, useState} from 'react';
 import css from './../Movies.module.css'
-import {Link, Outlet} from "react-router-dom";
+import {Link, Outlet, useParams} from "react-router-dom";
 import Loader from "../../Loader/Loader";
-import StarRatings from "../../Ratings/StarRatings";
+
+import Rating from "@mui/material/Rating";
+import StarIcon from "@mui/icons-material/Star";
 
 
 
 
 const MovieInfo = ({ info }) => {
 
+    const { id } = useParams();
+    const [ratingForMovie, setRatingForMovie] = useState(2);
+
+    useEffect(() => {
+
+        const storedRating = localStorage.getItem(`movie-rating-${id}`);
+        if (storedRating) {
+            setRatingForMovie(parseFloat(storedRating));
+        }
+    }, [id]);
     const {
         title,
         original_language,
@@ -22,7 +34,11 @@ const MovieInfo = ({ info }) => {
 
     } = info;
 
+    const handleRatingChange = (event, newValue) => {
+        setRatingForMovie(newValue);
 
+        localStorage.setItem(`movie-rating-${id}`, newValue.toString());
+    };
     const genresStr = genres.map((genre) => genre.name).join(', ');
     const voteAvarage = vote_average.toFixed(1);
     const realiseDate = release_date.slice(0, 4);
@@ -31,7 +47,7 @@ const MovieInfo = ({ info }) => {
         <div>
             <div className={css.wrapper}>
                 <img
-                    className={css.Post}
+                    // className={css.Post}
                     src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
                     alt={title}
                 />
@@ -48,7 +64,13 @@ const MovieInfo = ({ info }) => {
                     <h3>
                         {genresStr}
                     </h3>
-                    <StarRatings/>
+                    <Rating
+                        name={`movie-rating-${id}`}
+                        value={ratingForMovie}
+                        onChange={handleRatingChange}
+                        icon={<StarIcon fontSize="large" />}
+                        emptyIcon={<StarIcon fontSize="large" />}
+                    />
                 </div>
 
             </div>

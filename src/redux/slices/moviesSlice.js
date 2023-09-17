@@ -26,8 +26,6 @@ const all = createAsyncThunk(
 
             return data
 
-
-
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }
@@ -77,7 +75,7 @@ const moviesSlice = createSlice({
 
             state.movies = action.payload;
             state.pages = action.payload
-            console.log('yyy', action.payload)
+
 
 
 
